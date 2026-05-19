@@ -1,0 +1,18 @@
+# 1. Secret Keys (CRITICAL)
+.env
+
+# 2. Python Virtual Environment
+venv/
+env/
+.venv/
+
+# 3. Python Compiled Files
+__pycache__/
+*.py[cod]
+
+# 4. VS Code Settings (Optional)
+.vscode/
+
+# 5. OS files
+Thumbs.db
+.DS_Store
