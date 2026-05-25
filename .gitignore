@@ -15,4 +15,5 @@ __pycache__/
 
 # 5. OS files
 Thumbs.db
-.DS_Store
+.DS_Storechroma_db/
+chroma_db/
