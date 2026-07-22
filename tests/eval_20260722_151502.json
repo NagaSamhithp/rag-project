@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-07-22T15:15:02.789184",
+  "version": "baseline_v1",
+  "ragas_version": "0.4.3",
+  "config": {
+    "chunk_size": 500,
+    "chunk_overlap": 50,
+    "top_k": 5,
+    "judge_llm": "llama-3.1-8b-instant",
+    "embed_model": "all-MiniLM-L6-v2"
+  },
+  "scores": {
+    "faithfulness": 0.62,
+    "answer_relevancy": 0.3718,
+    "context_precision": 0.6339,
+    "average": 0.5419
+  },
+  "num_questions": 10
+}
