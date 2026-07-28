@@ -16,6 +16,9 @@ from sentence_transformers import SentenceTransformer
 import chromadb
 from openai import OpenAI
 
+from langsmith.wrappers import wrap_openai
+from langsmith import traceable
+
 EMBED_MODEL_NAME = "all-mpnet-base-v2"
 CHUNK_SIZE       = 700
 CHUNK_OVERLAP    = 70        
@@ -44,10 +47,11 @@ def load_groq_client():
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         return None
-    return OpenAI(
+    client = OpenAI(
         api_key  = api_key,
         base_url = "https://api.groq.com/openai/v1",
     )
+    return wrap_openai(client)
 
 
 def ingest_pdf(pdf_path, collection_name):
@@ -97,6 +101,7 @@ def get_collection(collection_name):
     except Exception:
         return None
 
+@traceable(name="retrieve_chunks")
 def retrieve(question, collection, top_k):
     """Embed question -> find top_k closest chunks."""
     model = load_embed_model()
