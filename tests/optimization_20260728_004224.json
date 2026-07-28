@@ -1,0 +1,15 @@
+[
+  {
+    "experiment": "E11_production",
+    "chunk_size": 700,
+    "top_k": 8,
+    "embed_model": "all-mpnet-base-v2",
+    "n_chunks": 68,
+    "scores": {
+      "faithfulness": 0.7333,
+      "answer_relevancy": 0.8771,
+      "context_precision": 0.5699,
+      "average": 0.7268
+    }
+  }
+]

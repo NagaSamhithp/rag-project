@@ -1,0 +1,15 @@
+[
+  {
+    "experiment": "E6_best",
+    "chunk_size": 700,
+    "top_k": 8,
+    "embed_model": "all-MiniLM-L6-v2",
+    "n_chunks": 68,
+    "scores": {
+      "faithfulness": 0.6467,
+      "answer_relevancy": 0.4134,
+      "context_precision": 0.4962,
+      "average": 0.5188
+    }
+  }
+]

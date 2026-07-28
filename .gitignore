@@ -17,3 +17,5 @@ __pycache__/
 Thumbs.db
 .DS_Storechroma_db/
 chroma_db/
+chroma_experiments/
+chroma_uploads/

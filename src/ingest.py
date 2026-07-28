@@ -17,14 +17,14 @@ pages = loader.load()
 print(f"Loaded {len(pages)} pages")
 
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size = 500,
-    chunk_overlap = 50,
+    chunk_size = 700,
+    chunk_overlap = 70,
     length_function = len,
 )
 
 chunks = splitter.split_documents(pages)
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("all-mpnet-base-v2")
 texts = [c.page_content for c in chunks]
 embeddings = model.encode(texts, show_progress_bar=True)
 

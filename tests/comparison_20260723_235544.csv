@@ -1,0 +1,2 @@
+Experiment,chunk_size,top_k,embed_model,Faithfulness,AnswerRelevancy,ContextPrecision,Average
+E6_best,700,8,all-MiniLM-L6-v2,0.6467,0.4134,0.4962,0.5188

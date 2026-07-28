@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 import chromadb
 from groq import Groq
 
-EMBED_MODEL = SentenceTransformer("all-MiniLM-l6-v2")
+EMBED_MODEL = SentenceTransformer("all-mpnet-base-v2")
 CHROMA_CLIENT = chromadb.PersistentClient(path="chroma_db")
 COLLECTION = CHROMA_CLIENT.get_collection(name="documents")
 GROQ_CLIENT = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -15,7 +15,7 @@ GROQ_CLIENT = Groq(api_key=os.getenv("GROQ_API_KEY"))
 print(f"Ready. ChromaDB has {COLLECTION.count()} chunks loaded.")
 print()
 
-def retrieve(question: str, top_k: int = 5) -> list[dict]:
+def retrieve(question: str, top_k: int = 8) -> list[dict]:
     question_vector = EMBED_MODEL.encode([question])[0]
     
     results = COLLECTION.query(
@@ -38,13 +38,14 @@ def build_prompt(question: str, chunks: list[dict]) -> str:
         f"[Source {i} — Page {chunk['page']}]\n{chunk['text']}"
         for i, chunk in enumerate(chunks, start=1)
     ]
+    context = "\n\n".join(context_parts)
     return f"""You are a helpful assistant. Answer the question using ONLY the context provided below.
 Do not use outside knowledge. If the answer is not in the context, say "I don't find this in the document."
 
-    CONTEXT: {"\n\n".join(context_parts)}
-    
+    CONTEXT: {context}
+
     QUESTION: {question}
-    
+
     Answer:"""
     
 def generate(prompt: str) -> str:

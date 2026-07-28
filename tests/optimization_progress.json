@@ -1,0 +1,91 @@
+
+[
+  {
+    "experiment": "E0_baseline",
+    "chunk_size": 500,
+    "top_k": 5,
+    "embed_model": "all-MiniLM-L6-v2",
+    "n_chunks": "reused (already ingested earlier)",
+    "scores": {
+      "faithfulness": 0.425,
+      "answer_relevancy": 0.2357,
+      "context_precision": 0.6339,
+      "average": 0.431
+    }
+  },
+  {
+    "experiment": "E1_chunk300",
+    "chunk_size": 300,
+    "top_k": 5,
+    "embed_model": "all-MiniLM-L6-v2",
+    "n_chunks": "reused (already ingested earlier)",
+    "scores": {
+      "faithfulness": 0.5833,
+      "answer_relevancy": 0.2805,
+      "context_precision": 0.3883,
+      "average": 0.4174
+    }
+  },
+  {
+    "experiment": "E2_chunk700",
+    "chunk_size": 700,
+    "top_k": 5,
+    "embed_model": "all-MiniLM-L6-v2",
+    "n_chunks": "reused (already ingested earlier)",
+    "scores": {
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.3568,
+      "context_precision": 0.5317,
+      "average": 0.4628
+    }
+  },
+  {
+    "experiment": "E3_topk3",
+    "chunk_size": 500,
+    "top_k": 3,
+    "embed_model": "all-MiniLM-L6-v2",
+    "n_chunks": "reused from E0",
+    "scores": {
+      "faithfulness": 0.2833,
+      "answer_relevancy": 0.3753,
+      "context_precision": 0.6167,
+      "average": 0.4251
+    }
+  },
+  {
+    "experiment": "E4_topk8",
+    "chunk_size": 500,
+    "top_k": 8,
+    "embed_model": "all-MiniLM-L6-v2",
+    "n_chunks": "reused from E0",
+    "scores": {
+      "faithfulness": 0.63,
+      "answer_relevancy": 0.2757,
+      "context_precision": 0.5329,
+      "average": 0.4795
+    }
+  },
+  {
+    "experiment": "E5_mpnet",
+    "chunk_size": 500,
+    "top_k": 5,
+    "embed_model": "all-mpnet-base-v2",
+    "n_chunks": "freshly ingested with mpnet",
+    "scores": {
+      "faithfulness": 0.5556,
+      "answer_relevancy": 0.2811,
+      "context_precision": 0.5204,
+      "average": 0.4524
+    }
+  }
+]
+
+
+
+
+
+
+
+
+
+

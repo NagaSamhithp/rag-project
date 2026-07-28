@@ -1,0 +1,8 @@
+Experiment,chunk_size,top_k,embed_model,Faithfulness,AnswerRelevancy,ContextPrecision,Average
+E0_baseline,500,5,all-MiniLM-L6-v2,0.425,0.2357,0.6339,0.431
+E1_chunk300,300,5,all-MiniLM-L6-v2,0.5833,0.2805,0.3883,0.4174
+E2_chunk700,700,5,all-MiniLM-L6-v2,0.5,0.3568,0.5317,0.4628
+E3_topk3,500,3,all-MiniLM-L6-v2,0.2833,0.3753,0.6167,0.4251
+E4_topk8,500,8,all-MiniLM-L6-v2,0.63,0.2757,0.5329,0.4795
+E5_mpnet,500,5,all-mpnet-base-v2,0.5556,0.2811,0.5204,0.4524
+E6_best,700,8,all-MiniLM-L6-v2,0.6467,0.4134,0.4962,0.5188

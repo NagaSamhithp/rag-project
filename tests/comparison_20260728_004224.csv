@@ -1,0 +1,2 @@
+Experiment,chunk_size,top_k,embed_model,Faithfulness,AnswerRelevancy,ContextPrecision,Average
+E11_production,700,8,all-mpnet-base-v2,0.7333,0.8771,0.5699,0.7268

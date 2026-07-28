@@ -1,0 +1,30 @@
+[
+  {
+    "experiment": "E8_topk12",
+    "chunk_size": 700,
+    "top_k": 12,
+    "embed_model": "all-MiniLM-L6-v2",
+    "generation_model": "llama-3.1-8b-instant",
+    "n_chunks": "reused from E6_best",
+    "scores": {
+      "faithfulness": 0.775,
+      "answer_relevancy": 0.4212,
+      "context_precision": 0.4795,
+      "average": 0.5586
+    }
+  },
+  {
+    "experiment": "E9_chunk400",
+    "chunk_size": 400,
+    "top_k": 8,
+    "embed_model": "all-MiniLM-L6-v2",
+    "generation_model": "llama-3.1-8b-instant",
+    "n_chunks": "freshly ingested",
+    "scores": {
+      "faithfulness": 0.63,
+      "answer_relevancy": 0.3111,
+      "context_precision": 0.3489,
+      "average": 0.43
+    }
+  }
+]
