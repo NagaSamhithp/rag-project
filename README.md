@@ -79,9 +79,11 @@ Quality measured with [RAGAS](https://github.com/explodinggradients/ragas) acros
 ### Key findings
 
 > **Finding 1 — Embedding quality only pays off in combination.**
+>
 > MiniLM → MPNet alone (E5) *underperformed* baseline. It only became a real win (E10) once paired with the right chunk size and retrieval breadth. Testing one variable in isolation understated its true value.
 
 > **Finding 2 — Retrieval and generation are independent levers.**
+>
 > E10 → E11 held retrieval completely constant and only upgraded the generation model. Answer Relevancy nearly doubled (0.446 → 0.877). Context Precision stayed flat — exactly as expected, since retrieval logic never changed. This is direct proof the two levers don't substitute for each other.
 
 Full experiment history: [`src/optimize.py`](src/optimize.py) · Raw results: [`tests/`](tests/)
